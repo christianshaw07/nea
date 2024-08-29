@@ -1,0 +1,33 @@
+import sqlite3
+
+#initialise a connection
+connection = sqlite3.connect('shop.db')
+cursor = connection.cursor()
+
+#create a table
+cursor.execute('CREATE TABLE IF NOT EXISTS login (staff_key INTEGER PRIMARY KEY, password TEXT)')
+
+
+def add_new_staff(staff_key,password):
+  try:
+    cursor.execute("INSERT INTO login (staff_key,password) VALUES (?,?)",(staff_key,password,))
+    connection.commit()
+  except Exception as error:
+    print(f"An error occured : {error}")
+
+def change_password(staff_key,new_password):
+  try:
+    cursor.execute('UPDATE login SET password  = ? WHERE staff_key = ?',(new_password,staff_key))
+    connection.commit()
+  except Exception as error:
+    print(f"An error occured : {error}")
+
+def fire_staff(staff_key):
+  try:
+      cursor.execute("DELETE FROM login WHERE staff_key = ?", (staff_key,))
+      connection.commit()
+  except Exception as error:
+      print(f"An error occurred: {error}")
+
+add_new_staff(123,"asd")
+connection.close()
