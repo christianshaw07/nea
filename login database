@@ -30,4 +30,5 @@ def fire_staff(staff_key):
       print(f"An error occurred: {error}")
 
 add_new_staff(123,"asd")
+fire_staff(123,"asd")
 connection.close()
