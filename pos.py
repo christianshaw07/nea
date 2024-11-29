@@ -5,7 +5,8 @@ import tkinter
 class CashRegister:
     def __init__(self, one_pence_count, two_pence_count, five_pence_count, ten_pence_count,twenty_pence_count, fifty_pence_count,
                  one_pound_count, two_pound_count, five_pound_count, ten_pound_count, twenty_pound_count,
-                 fifty_pound_count):
+                 fifty_pound_count): 
+                     
         self.one_pence_count = one_pence_count
         self.two_pence_count = two_pence_count
         self.five_pence_count = five_pence_count
@@ -125,6 +126,24 @@ class CashRegister:
                 one_pence_out = amount_due / 1
                 amount_due -= 1 * int(one_pence_out)
                 self.one_pence_count -= int(one_pence_out)
+
+    class advancedCashRegister : CashRegsiter()
+         def __init__(self, one_pence_count, two_pence_count, five_pence_count, ten_pence_count,twenty_pence_count, fifty_pence_count,
+                 one_pound_count, two_pound_count, five_pound_count, ten_pound_count, twenty_pound_count,
+                 fifty_pound_count, taxRate = 0.0, discount = 0.0):    
+         super().__init__(self, one_pence_count, two_pence_count, five_pence_count, ten_pence_count,twenty_pence_count, fifty_pence_count,
+                 one_pound_count, two_pound_count, five_pound_count, ten_pound_count, twenty_pound_count,
+                 fifty_pound_count)
+            self.taxRate = taxRate
+            self.discount = discount
+
+         def calculateTax(self):
+           total_in_pence = self.calculate_total_in_pence()
+           taxAmount = total_in_pence * self.taxRate
+             return taxAmount / 100 
+
+        
+
         
 #Example usage
 tesco_cash_register = CashRegister(0,0,0,0,0,0,0,0,0,0,0,1)
