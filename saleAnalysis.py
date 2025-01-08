@@ -1,4 +1,4 @@
-import sqlite3
+Vimport sqlite3
 import matplotlib.pyplot as plt
 
 connection = sqlite3.connect('salesNea.db')
@@ -67,5 +67,12 @@ off_peak_values = [
 ]
 plt.bar(peak_columns, peak_values)
 plt.show()
+
+
+##we are going to make a stacked bar chart for profit/loss
+
+cursor.execute('CREATE TABLE IF NOT EXISTS item PRIMARY TEXT KEY, stock_purchased INTEGER, stock_sold INTEGER, shelf_price REAL, stock_price REAL')
+
+
 
 
