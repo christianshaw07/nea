@@ -71,6 +71,9 @@ plt.show()
 
 ##we are going to make a stacked bar chart for profit/loss
 
+
+
+
 cursor.execute('CREATE TABLE IF NOT EXISTS item PRIMARY TEXT KEY, stock_purchased INTEGER, stock_sold INTEGER, shelf_price REAL, stock_price REAL')
 
 
