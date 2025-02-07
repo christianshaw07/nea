@@ -69,8 +69,37 @@ plt.bar(peak_columns, peak_values)
 plt.show()
 
 
-##we are going to make a stacked bar chart for profit/loss
+##create table for income per day 
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS daily_profit (
+    monday_income INTEGER,
+    tuesday_income INTEGER,
+    wednesday_income INTEGER,
+    thursday_income INTEGER,
+    friday_income INTEGER,
+    saturday_income INTEGER,
+    sunday_income INTEGER
+)
+''')
+profit_collumns = [ 
+    'monday_income', 'tuesday_income', 'wednesday_income', 'thursday_income',
+    'friday_income', 'saturday_income', 'sunday_income'
+    ]
+losses_collumns = [
+     'monday_losses', 'tuesday_losses', 'wednesday_losses', 'thursday_losses',
+    'friday_losses', 'saturday_losses', 'sunday_losses'
+    ]
+profit_values [ 
+    'monday_income', 'tuesday_income', 'wednesday_income', 'thursday_income',
+    'friday_income', 'saturday_income', 'sunday_income'
+    ]
+losses_values [
+    'monday_losses', 'tuesday_losses', 'wednesday_losses', 'thursday_losses',
+    'friday_losses', 'saturday_losses', 'sunday_losses'
+    ]
 
+plt.bar(profit_collumns, profit_values, losses_collumns, losses_values)
+plt.show()
 
 
 
