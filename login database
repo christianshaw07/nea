@@ -1,4 +1,9 @@
 import sqlite3
+import bycrypt 
+
+#secure password
+hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
 
 #initialise a connection
 connection = sqlite3.connect('shop.db')
