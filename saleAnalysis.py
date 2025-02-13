@@ -98,13 +98,11 @@ losses_values [
     'friday_losses', 'saturday_losses', 'sunday_losses'
     ]
 
-plt.bar(profit_collumns, profit_values, losses_collumns, losses_values)
+plt.bar(profit_collumns, profit_values, losses_collumns, losses_values, colour = "Aqua")
 plt.show()
 
 
 
 cursor.execute('CREATE TABLE IF NOT EXISTS item PRIMARY TEXT KEY, stock_purchased INTEGER, stock_sold INTEGER, shelf_price REAL, stock_price REAL')
-
-
 
 
