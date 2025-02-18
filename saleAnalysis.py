@@ -98,7 +98,8 @@ losses_values [
     'friday_losses', 'saturday_losses', 'sunday_losses'
     ]
 
-plt.bar(profit_collumns, profit_values, losses_collumns, losses_values, colour = "Aqua")
+plt.bar(profit_collumns, profit_values) 
+plt.bar (losses_collumns, losses_values)
 plt.show()
 
 
